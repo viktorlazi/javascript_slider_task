@@ -36,6 +36,9 @@ section{
   border-radius: 20px;
 }
 #slider-controls{
+  display:flex;
+  flex-direction: column;
+  row-gap: 5px;
   margin: 15px 0 0 50px;
 }
 #slider-controls img{
