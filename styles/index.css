@@ -1,6 +1,6 @@
 body{
   font-family:Arial, Helvetica, sans-serif;
-  max-width: 1296px;
+  max-width: 960px;
   margin:0 auto;
 }
 section{
@@ -25,21 +25,31 @@ section{
 .slider{
   overflow: hidden;
 }
-.slider .col{
+.slider .row{
   display:flex;
   flex-direction: row-reverse;
   flex-wrap: nowrap;
+  position:relative;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 .slider img{
   height: 200px;
-  padding: 5px;
   border-radius: 20px;
+}
+#row2 > img:first-of-type{
+  margin-right:100px;
 }
 #slider-controls{
   display:flex;
+  align-items: center;
   flex-direction: column;
   row-gap: 5px;
-  margin: 15px 0 0 50px;
+  position: absolute;
+  background-color: white;
+  padding:10px;
+  height:100%;
+  width:80px;
 }
 #slider-controls img{
   height: 15px;
