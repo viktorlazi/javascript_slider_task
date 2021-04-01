@@ -1,18 +1,20 @@
-const controlsGap = 170;
-const flexGap = 10;
-const animationTime = 700;
+'use strict';
 
-$(document).ready(() => {
-  $('#go_right').click(() => {
+var controlsGap = 170;
+var flexGap = 10;
+var animationTime = 700;
+
+$(document).ready(function () {
+  $('#go_right').click(function () {
     if ($('.slider img').is(':animated')) {
       return;
     }
 
-    const firstInRow1 = $('#row1 > img:first');
-    const firstInRow2 = $('#row2 > img:first');
+    var firstInRow1 = $('#row1 > img:first');
+    var firstInRow2 = $('#row2 > img:first');
 
     firstInRow1.animate({ marginRight: -firstInRow1.width() - flexGap }, animationTime);
-    firstInRow2.animate({ marginRight: -firstInRow2.width() - flexGap + controlsGap }, animationTime, () => {
+    firstInRow2.animate({ marginRight: -firstInRow2.width() - flexGap + controlsGap }, animationTime, function () {
       //shift only after animation
       firstInRow1.appendTo('#row2');
       firstInRow2.appendTo('#row1');
@@ -20,7 +22,7 @@ $(document).ready(() => {
       firstInRow2.css('marginRight', '');
     });
   });
-  $('#go_left').click(() => {
+  $('#go_left').click(function () {
     if ($('.slider img').is(':animated')) {
       return;
     }
@@ -28,15 +30,15 @@ $(document).ready(() => {
     $('#row2 > img').css('marginRight', '');
 
     //before shift  
-    const lastInRow1 = $('#row1 > img:last-child');
-    const lastInRow2 = $('#row2 > img:last-child');
+    var lastInRow1 = $('#row1 > img:last-child');
+    var lastInRow2 = $('#row2 > img:last-child');
 
     lastInRow1.insertAfter('#slider-controls');
     lastInRow2.prependTo('#row1');
 
     // after shift
-    const firstInRow1 = $('#row1 > img:first');
-    const firstInRow2 = $('#row2 > img:first');
+    var firstInRow1 = $('#row1 > img:first');
+    var firstInRow2 = $('#row2 > img:first');
 
     firstInRow1.css('marginRight', -firstInRow1.width() - flexGap);
     firstInRow1.animate({ marginRight: '' }, animationTime);
